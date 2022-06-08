@@ -20,8 +20,9 @@ class ItemController extends Controller
         return view('add-item');
     }
 
-    public function editItem() {
-        return view('edit-item');
+    public function editItem($id) {
+        $item = Item::find($id);
+        return view('edit-item', compact('item', 'id'));
     }
 
     public function createItem(Request $request) {
@@ -33,5 +34,21 @@ class ItemController extends Controller
         return redirect('/');
     }
 
+    public function updateItem(Request $request, $id){
+        $item = Item::find($id);
+
+        $item->name = $request->name;
+        $item->amount = $request->amount;
+
+        $item->save();
+        return redirect('/');
+    }
+
+    public function deleteItem($id){
+        $item = Item::find($id);
+
+        $item->delete();
+        return redirect('/');
+    }
 
 }

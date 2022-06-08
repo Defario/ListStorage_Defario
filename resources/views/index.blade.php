@@ -57,9 +57,14 @@
                             </p>
 
                             <div class="mt-3 d-flex">
-                                <a href="#" class="btn btn-primary"> Done </a>
+                                <form method="POST" action="{{"/item/{$item->id}/delete"}}">
+                                    @csrf
+                                    @method('delete')
+                                    <button type="submit" class="btn btn-primary"> Done </button>
+                                </form>
+
                                 <a
-                                    href="/edit-task.html"
+                                href="{{"/item/{$item->id}/edit"}}"
                                     class="btn btn-warning ms-2"
                                     >Edit</a
                                 >

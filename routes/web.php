@@ -21,6 +21,10 @@ Route::get('/', [ItemController::class, 'index']);
 
 Route::get('/item/add', [ItemController::class, 'addItem']);
 
-Route::get('item/edit', [ItemController::class, 'editItem']);
+Route::get('/item/{id}/edit', [ItemController::class, 'editItem']);
 
-Route::post('item/create', [ItemController::class, 'createItem']);
+Route::post('/item/create', [ItemController::class, 'createItem']);
+
+Route::patch('/item/{id}/update', [ItemController::class, 'updateItem']);
+
+Route::delete('/item/{id}/delete', [ItemController::class, 'deleteItem']);
