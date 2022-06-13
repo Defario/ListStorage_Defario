@@ -42,6 +42,21 @@
                             >{{$item->amount}}</textarea
                             >
                         </div>
+                        <div class="mb-3">
+                            <label for="category" class="form-label">
+                                Category
+                            </label>
+                            <select
+                                name="category_id"
+                                id="category"
+                                class="form-select"
+                            >
+                                <option value="1" @if($item->category->category === 'Furniture') selected @endif>Furniture</option>
+                                <option value="2" @if($item->category->category === 'Food n Beverages') selected @endif>Food n Beverages</option>
+                                <option value="3" @if($item->category->category === 'Electronic') selected @endif>Electronic</option>
+                                <option value="4" @if($item->category->category === 'Anything else') selected @endif>Anything else</option>
+                            </select>
+                        </div>
                         <div class="row justify-content-center">
                             <button type="submit" class="btn btn-primary">
                                 Submit

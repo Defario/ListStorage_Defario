@@ -32,6 +32,20 @@
                             <br>
                             <input type="number" name="amount" id="amount" min="0">
                         </div>
+                        <div class="mb-3">
+                            <label for="category" class="form-label">
+                                Category
+                            </label>
+                            <select
+                                name="category_id"
+                                id="category"
+                                class="form-select"
+                            >
+                                @foreach ($categories as $category)
+                                    <option value="{{ $category->id }}">{{ $category->category }}</option>
+                                @endforeach
+                            </select>
+                        </div>
                         <div class="row justify-content-center">
                             <button type="submit" class="btn btn-primary">
                                 Submit

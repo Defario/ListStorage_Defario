@@ -28,3 +28,11 @@ Route::post('/item/create', [ItemController::class, 'createItem']);
 Route::patch('/item/{id}/update', [ItemController::class, 'updateItem']);
 
 Route::delete('/item/{id}/delete', [ItemController::class, 'deleteItem']);
+
+Route::get('/item/furniture', [ItemController::class, 'furnitureItem']);
+
+Route::get('/item/fnb', [ItemController::class, 'fnbItem']);
+
+Route::get('/item/elect', [ItemController::class, 'electItem']);
+
+Route::get('/item/any', [ItemController::class, 'anyItem']);

@@ -23,6 +23,28 @@
             <a href="/item/add" class="btn btn-primary" type="submit">
                 Add New Item
             </a>
+            <br>
+            <br>
+
+            <a href="/" class="btn bg-warning" type="submit">
+                STORAGE
+            </a>
+
+            <a href="/item/furniture" class="btn bg-success text-white" type="submit">
+                Furniture
+            </a>
+
+            <a href="/item/fnb" class="btn bg-success text-white" type="submit">
+                FnB
+            </a>
+
+            <a href="/item/elect" class="btn bg-success text-white" type="submit">
+                Electronic
+            </a>
+
+            <a href="/item/any" class="btn bg-success text-white" type="submit">
+                Anything else
+            </a>
 
             <div class="d-flex flex-wrap align-content-start mt-5">
 
@@ -30,12 +52,12 @@
                     <div class="card mb-4 me-4" style="width: 18rem">
                         <div class="card-body">
                             <div class="d-flex justify-content-between">
-                                <div class="h5 card-title">{{ $item->name}}</div>
+                                <div class="h5 card-title">{{ $item->name }} - {{ $item->category->category }}</div>
 
                                 @if ($item->amount > 50)
                                     <div>
-                                        <div class="rounded p-1 bg-danger text-white">
-                                            Too Much
+                                        <div class="rounded p-1 bg-success text-white">
+                                            Safe
                                         </div>
                                     </div>
                                 @elseif ($item->amount >= 5)
@@ -46,8 +68,8 @@
                                     </div>
                                 @else
                                     <div>
-                                        <div class="rounded p-1 bg-success text-white">
-                                            Need refill
+                                        <div class="rounded p-1 bg-danger text-white">
+                                            Refill!!!
                                         </div>
                                     </div>
                                 @endif
